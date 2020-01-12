@@ -1,0 +1,39 @@
+﻿@model customLms.Models.ContentViewModel
+
+@{
+    ViewBag.Title = "Content";
+}
+
+<div class="pc-headline">
+    <h2>@Model.name</h2>
+    <a class=" btn btn-primary pull-right" href="/CourseContent/Index/@Model.courseId">
+        <span class=" glyphicon glyphicon-arrow-left"></span>
+        Back
+    </a>
+</div>
+
+<div>
+    @Model.description
+</div>
+
+@if (Model.HTML != null)
+{
+    <div class=" article">@Html.Raw(Model.HTML)</div>
+}
+
+
+@if (Model.VideoURL != null)//video play is not added because of paid version
+{
+    <div class=" article">@Html.Raw(Model.HTML)</div>
+}
+
+
+@section scripts
+{
+    <script type="text/javascript">//188-same problem
+        $(function () {
+
+        });
+    </script>
+}
+

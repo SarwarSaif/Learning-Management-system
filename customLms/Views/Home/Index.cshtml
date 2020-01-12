@@ -1,0 +1,31 @@
+﻿@model IEnumerable<customLms.Models.ThumbnailAreaModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @if (User.Identity.IsAuthenticated)
+    {
+        foreach (var area in Model)
+        {
+
+
+            @Html.Partial("_ThumbnailAreaPartial", area)
+        }
+    }
+    else
+    {
+        //Left column
+        <div class="col-lg-9 col-md-8 col-sm-7">
+            <h2>Please log in at first to enroll or create class</h2>
+        </div>
+
+        //right column
+        <div class="col-lg-3 col-md-4 col-sm-5">
+
+        </div>
+
+
+    }
+</div>

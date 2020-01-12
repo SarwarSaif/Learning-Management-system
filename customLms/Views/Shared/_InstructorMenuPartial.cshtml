@@ -1,0 +1,36 @@
+﻿@if (Request.IsAuthenticated && User.IsInRole("Instructor"))
+{
+<li class="dropdown" data-instructor-menu>
+
+ <a href="#">
+
+     Instructor
+     <span class="glyphicon glyphicon-chevron-down"> </span>
+
+ </a>
+ <ul class="dropdown-menu" role="menu">
+     @*place the menu list here.
+     total subs
+     total courses taken
+     create course etc*@
+     <li class="dropdown-header">info inputs</li>
+    
+     <li><a href="/Instructor/Section">&nbsp;&nbsp;section</a></li>
+     <li><a href="/Instructor/Part">&nbsp;&nbsp;part</a></li>
+     <li><a href="/Instructor/ContentTypes">&nbsp;&nbsp;Content Types</a></li>
+     <li><a href="/Instructor/Catagories">&nbsp;&nbsp;Catagories</a></li>
+     <li><a href="/Instructor/CourseLinkTexts">&nbsp;&nbsp;Course Link Text</a></li>
+     <li><a href="/Instructor/Content">&nbsp;&nbsp;Content</a></li>
+     <li><a href="/Instructor/Courses">&nbsp;&nbsp;Course</a></li>
+     <li><a href="/Instructor/Subscriptions">&nbsp;&nbsp;Subscription</a></li>
+     <li><a href="/Instructor/CourseContents">&nbsp;&nbsp;course contents</a></li>
+     <li><a href="/Instructor/SubscriptionOfCourses">&nbsp;&nbsp;Subscription of Courses</a></li>
+     <li><a href="/Account">&nbsp;&nbsp;student subscriptions</a></li>
+
+
+ </ul>
+
+
+
+
+</li>}

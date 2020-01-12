@@ -1,0 +1,26 @@
+﻿@model IEnumerable<customLms.Models.CourseSection>
+
+@foreach (var s in Model)
+{
+    <div class="panel panel-success">
+        <div class=" panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" class="panel-carret" href="#collapse@{@s.id}">
+                    <span class="pull-left glyphicon glyphicon-play gly-rotate-90"></span>
+                    @s.Title
+                </a>
+            </h4>
+
+        </div>
+        <div id="collapse @{@s.id} " class="panel-collapse collapse in">
+            <div class="panel-body">
+                @foreach (var item in s.Items)
+                {
+                    @Html.Partial("_CourseItemRowPartial", item)
+                }
+
+            </div>
+        </div>
+    </div>
+    <br />
+}

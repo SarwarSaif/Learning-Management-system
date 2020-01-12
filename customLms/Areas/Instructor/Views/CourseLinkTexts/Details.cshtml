@@ -1,0 +1,26 @@
+﻿@model customLms.Entities.CourseLinkText
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course Link Text</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   @Html.Partial("_EditButtonPartial",Model.id)
+    @Html.Partial("_BackToListButtonPartial")
+</p>

@@ -1,0 +1,30 @@
+﻿@model customLms.Areas.Instructor.Models.SubscriptionOfCourseModel
+@using customLms.Areas.Instructor.Models
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>sub of courses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.subscriptionName)</dt>
+        <dd>@Html.DisplayFor(m => m.subscriptionName)</dd>
+        <dt>@Html.DisplayNameFor(m => m.courseName)</dt>
+
+        <dd>@Html.DisplayFor(m => m.courseName)</dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

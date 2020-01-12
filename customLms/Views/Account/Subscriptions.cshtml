@@ -1,0 +1,89 @@
+﻿@model customLms.Models.StudentSubscriptionViewModel
+    @using customLms.Extensions
+
+
+
+@{
+    ViewBag.Title = "Subscriptions";
+}
+
+<h2>Subscriptions</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add student to subscription</h4>
+
+        <hr />
+        @if (Model.disableDropDown)
+        {
+            <div><strong>User Has All subscriptions</strong></div>
+            <br />
+        }
+        else
+        {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.subscriptions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.subscriptionId,
+                   Model.subscriptions.ToSelectListItem(Model.subscriptionId),
+
+                new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.subscriptionId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default btn-success" />
+            </div>
+        </div>
+        }
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<hr />
+<br />
+<table class="table table-condensed table-striped">
+    <tr class="success">
+
+        <th>Number</th>
+        <th>Name</th>
+        <th>Code</th>
+       
+        <th></th>
+</tr>
+
+    @foreach(var item in Model.studentSubscriptions)
+    {
+        <tr>
+
+            <td>@Html.DisplayFor(modelItem =>item.id)</td>
+            <td>@Html.DisplayFor(modelItem => item.name)</td>
+            <td>@Html.DisplayFor(modelItem => item.regCode)</td>
+            <td>
+                <a type="button" class="btn btn-danger btn-sm"
+                   href="@Url.Action("RemoveUserSubscription")?subsciptionId=@item.id&studentId=@Model.studentId "></a>
+                
+                <span class="glyphicon"></span></td>
+
+             
+        </tr>
+        
+
+
+
+    }
+
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<customLms.Models.UserViewModel>
+    @using customLms.Areas.Instructor.Models;
+
+@{
+    ViewBag.Title = "Users and Subscriptions";
+}
+
+<h2>Users and Subscriptions</h2>
+@if (Request.IsAuthenticated && User.IsInRole("Instructor"))
+{
+<p>
+    
+</p>
+<table class="table table-condensed table-striped">
+    <tr class="success">
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        
+        <td>
+          @Html.Partial("_TableButtonPartial2", new SmallButtonModel { studentId = item.id })
+        </td>
+    </tr>
+}
+
+</table>
+}

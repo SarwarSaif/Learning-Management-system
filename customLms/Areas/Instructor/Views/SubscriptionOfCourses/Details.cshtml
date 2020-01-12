@@ -1,0 +1,24 @@
+﻿@model customLms.Areas.Instructor.Models.SubscriptionOfCourseModel
+@using customLms.Areas.Instructor.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>subscription of courses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m=>m.subscriptionName)</dt>
+        <dd>@Html.DisplayFor(m => m.subscriptionName)</dd>
+        <dt>@Html.DisplayNameFor(m => m.courseName)</dt>
+        
+        <dd>@Html.DisplayFor(m => m.courseName)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

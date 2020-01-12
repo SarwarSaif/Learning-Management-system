@@ -1,0 +1,78 @@
+﻿@model customLms.Areas.Instructor.Models.SmallButtonModel
+
+@using  customLms.Areas.Instructor.Models;
+@using customLms.Models;
+
+<td style="width:120px;">
+    <div class="btn-group" role="group">
+ 
+
+ @if (Model.studentId != null && !Model.studentId.Equals(String.Empty))
+ {     @Html.Partial("_SmallButtonPartial",
+
+       new SmallButtonModel
+       {
+           Action = "Subscriptions",
+           ButtonType = "btn-info",
+           Glyph = "list",
+           Text = "Subscriptions",
+           Id = Model.Id,
+           ContentId = Model.ContentId,
+           CourseId = Model.CourseId,
+           SubscriptionId = Model.SubscriptionId,
+           studentId = Model.studentId
+
+
+       })
+ }
+
+       
+@if (Model.studentId == null || Model.studentId.Equals(String.Empty))
+{
+        @Html.Partial("_SmallButtonPartial",
+
+
+     new SmallButtonModel
+     {
+         Action = "Details",
+         ButtonType = "btn-success",
+         Glyph = "list",
+         Text = "Detail Button",
+         Id = Model.Id,
+         ContentId = Model.ContentId,
+         CourseId = Model.CourseId,
+         SubscriptionId = Model.SubscriptionId,
+         studentId = Model.studentId
+
+
+     })
+}
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</td>
+

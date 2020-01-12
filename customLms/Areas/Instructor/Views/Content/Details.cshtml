@@ -1,0 +1,91 @@
+﻿@model customLms.Entities.Content
+@using customLms.Extensions
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Content</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.permitDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.permitDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contentTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contentTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sectionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sectionId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

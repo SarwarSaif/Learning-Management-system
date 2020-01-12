@@ -1,0 +1,16 @@
+﻿@model customLms.Models.CourseSectionModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class=" pc-headline">
+    <h2>@Model.Title</h2>
+    <a class="btn btn-primary pull-right" href="/Home/Index">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        Back
+    </a>
+</div>
+
+
+@Html.Partial("_CourseSectionPartial", Model.Sections)
